@@ -33,34 +33,51 @@ void __fastcall TForm1::ballTimerTimer(TObject *Sender)
         yPos = -yPos;
 
     //miss the paddle
-    if(ball->Left < paddleP1->Left ||
-       ball->Left + ball->Width > paddleP2->Left)
+    if(ball->Left + ball->Width < paddleP1->Left ||
+       ball->Left > paddleP2->Left + paddleP2->Width)
     {
         ballTimer->Enabled = false;
         ball->Visible = false;
+    }
+    //hit the paddle 1
+    else if(ball->Top + ball->Height/2 >= paddleP1->Top - ball->Height/2 &&
+            ball->Top <= paddleP1->Top + paddleP1->Height - ball->Height/2 &&
+            ball->Left == paddleP1->Left + paddleP1->Width)
+    {
+         xPos = -xPos;
+    }
 
-
+    //hit the paddle 2
+    else if(ball->Top + ball->Height/2 >= paddleP2->Top - ball->Height/2 &&
+            ball->Top <= paddleP2->Top + paddleP2->Height - ball->Height/2 &&
+            ball->Left + ball->Width > paddleP2->Left)
+    {
+         xPos = -xPos;
     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::upP1Timer(TObject *Sender)
 {
-    paddleP1->Top -= 10;
+    if(paddleP1->Top > 10)
+        paddleP1->Top -= 10;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::downP1Timer(TObject *Sender)
 {
-    paddleP1->Top += 10;
+    if(paddleP1->Top + paddleP1->Height < background->Height - 10)
+        paddleP1->Top += 10;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::upP2Timer(TObject *Sender)
 {
-    paddleP2->Top -= 10;
+    if(paddleP2->Top > 10)
+        paddleP2->Top -= 10;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::downP2Timer(TObject *Sender)
 {
-    paddleP2->Top += 10;
+    if(paddleP2->Top + paddleP2->Height < background->Height - 10)
+        paddleP2->Top += 10;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
