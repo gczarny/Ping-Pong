@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 130
-  Top = 132
-  Width = 1206
-  Height = 640
+  Left = 212
+  Top = 138
+  Width = 903
+  Height = 552
   Caption = 'Form1'
   Color = clBtnFace
   UseDockManager = True
@@ -17,22 +17,22 @@ object Form1: TForm1
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   DesignSize = (
-    1190
-    601)
+    887
+    513)
   PixelsPerInch = 96
   TextHeight = 13
   object background: TShape
     Left = 0
     Top = 0
-    Width = 1190
-    Height = 601
+    Width = 887
+    Height = 513
     Align = alClient
     Anchors = [akRight]
     Brush.Color = clInactiveCaption
   end
   object paddleP2: TImage
-    Left = 1120
-    Top = 238
+    Left = 817
+    Top = 150
     Width = 20
     Height = 152
     Anchors = [akRight, akBottom]
@@ -470,12 +470,11 @@ object Form1: TForm1
     Visible = False
   end
   object scoreLabel: TLabel
-    Left = 336
+    Left = 337
     Top = 181
     Width = 289
     Height = 42
     Alignment = taCenter
-    Anchors = [akRight, akBottom]
     AutoSize = False
     Caption = 'score'
     Font.Charset = DEFAULT_CHARSET

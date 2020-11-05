@@ -179,16 +179,7 @@ void __fastcall TForm1::newGameButtonClick(TObject *Sender)
             yPos = -6;
             turn = 0;
             FormCreate(Sender);
-        } /*
-        else
-        {
-            newGameButton->Visible = true;
-            nextTurnButton->Visible = true;
-            bouncesNumberLabel->Visible = true;
-            bouncesNumberLabel->Caption = "Iloœæ odbiæ: " + IntToStr(ballBounces);
-            scoreLabel->Visible = true;
-            scoreLabel->Caption = IntToStr(victoriesP1) + " : " + IntToStr(victoriesP2);
-        }    */
+        }
     }
     gameStarted = true;
 }
